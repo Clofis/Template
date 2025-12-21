@@ -1,0 +1,1433 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Work Sans';
+  overflow-x: hidden;
+  background: #ede4d7;
+}
+
+
+/* hero  */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+              url('/asset/img/download\ \(10\).jpeg') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      135deg,
+      rgba(110, 81, 65, 0.9) 0%,     /* #6E5141 */
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.pre-title {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.couple-names {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4.5rem;
+  font-weight: 400;
+  margin: 1rem 0;
+  line-height: 1.2;
+}
+
+.bride-name, .groom-name {
+  display: inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ampersand {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  margin: 0 1rem;
+  opacity: 0.8;
+}
+
+.wedding-date {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 8px;
+  margin-top: 2rem;
+  opacity: 0.9;
+}
+
+.doa{
+ padding-top: 70px;
+}
+.doateks h3{
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+.doateks p{
+  font-size: 0.90rem;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.3s; }
+.fade-in-up:nth-child(2) { animation-delay: 0.6s; }
+.fade-in-up:nth-child(3) { animation-delay: 0.9s; }
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .couple-names {
+    font-size: 3.5rem;
+  }
+
+  .wedding-date {
+    font-size: 1.5rem;
+    letter-spacing: 6px;
+  }
+
+  .ampersand {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 0 10px;
+  }
+
+  .couple-names {
+    font-size: 2.8rem;
+  }
+
+  .pre-title {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
+
+  .wedding-date {
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+  }
+
+  .ampersand {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .couple-names {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
+  .ampersand {
+    font-size: 1.8rem;
+    margin: 0 0.5rem;
+  }
+
+  .wedding-date {
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+
+  .pre-title {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  }
+
+  @media (max-width: 768px) {
+    .doa {
+      padding-top: 50px;
+    }
+  
+    .doateks h3 {
+      font-size: 1.6rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .doa {
+      padding-top: 40px;
+    }
+  
+    .doateks h3 {
+      font-size: 1.4rem;
+      margin: 0.8rem 0;
+    }
+  }
+
+
+/* Main */
+/* bgmain */
+.section-with-flowers {
+  position: relative;
+  background-color: #fdeee5;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Gaya bunga */
+.bunga-atas,
+.bunga-bawah {
+  width: 100%;
+  height: 120px;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+/* Atas tetap pakai absolute agar nempel di paling atas */
+.bunga-atas {
+  background-image: url('/asset/img/background 1 - Copy.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Bawah kita ubah ke position: relative agar ikut tinggi konten */
+.bunga-bawah {
+  background-image: url('/asset/img/background 1.png');
+  position: relative; /* diubah dari absolute */
+  margin-top: 3rem; /* kasih jarak dari konten sebelumnya */
+}
+
+
+
+/* Main Container */
+.main-invitation-container {
+  position: relative;
+  min-height: 100vh;
+  background-size: 400px;
+  background-attachment: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 1rem;
+  background-color: #ede4d7;
+}
+
+/* Main Content */
+.main-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 100px;
+  padding-bottom: 10px;
+}
+
+/* Header Section */
+.header-section {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInDown 1.5s ease-out;
+  padding-top: 50px;
+}
+
+.bismillah-text {
+  font-family: 'Dancing Script', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #6e5141;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(139, 69, 19, 0.2);
+}
+
+.invitation-subtitle {
+  font-size: 1.1rem;
+  color: #6e5141;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Couple Section */
+.couple-section {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.person-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.bride-card {
+  animation-delay: 0.3s;
+}
+
+.groom-card {
+  animation-delay: 0.6s;
+}
+
+/* Person Image Container */
+.person-image-container {
+  margin-bottom: 2rem;
+}
+
+.person-image {
+  width: 200px;
+  height: 280px;
+  background: #f5f0e8;
+  border-radius: 100px 100px 20px 20px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(69, 37, 1, 0.2);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.person-image:hover {
+  transform: translateY(-5px);
+}
+
+.bride-image img {
+  width: 300px;
+  padding-top: 100px;
+}
+
+.groom-image img {
+  width: 300px;
+  padding-top: 100px;
+}
+/* Person Details */
+.person-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #6e5141;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.person-divider {
+  width: 80px;
+  height: 2px;
+  background: #6e5141;
+  margin: 1rem auto;
+  opacity: 0.7;
+}
+
+.person-details {
+  color: #6e5141;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.person-details p {
+  margin-bottom: 0.3rem;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floralSway {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-invitation-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .bismillah-text {
+    font-size: 1.5rem;
+  }
+
+  .invitation-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .couple-section {
+    gap: 3rem;
+    flex-direction: column;
+  }
+}
+
+
+/* Time */
+
+.floral-banner {
+  background-image: url('/asset/img/download\ \(10\).jpeg'); /* ganti dengan gambar kamu */
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.832); /* full overlay */
+}
+
+.overlay1 {
+  background-color: rgba(0, 0, 0, 0.4); /* full overlay */
+  width: 100%;
+  height: 100%;
+}
+
+.event-container {
+  position: relative;
+  min-height: 100vh;
+  background-color: #6e5141;
+  background-image: url('../assets/floral-bg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content {
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+/* Judul */
+.save-the-date-title {
+  font-family: 'Dancing Script', serif;
+  font-size: 3rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+  padding-top: 20px;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Countdown */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.countdown-item {
+  background: #ede4d7;
+  color: #6e5141;
+  border-radius: 15px;
+  padding: 1rem;
+  min-width: 80px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.countdown-number {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.countdown-label {
+  font-size: 0.9rem;
+}
+
+/* Akad Card */
+.akad-card {
+  background: #ede4d7;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  color: #6e5141;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  background-image: url(/asset/img/overlay1.png);
+  background-position: right;
+  background-size: cover;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.cards-wrapper .akad-card {
+  flex: 1 1 280px;
+  max-width: 300px;
+}
+
+.akad-title {
+  font-family: 'Dancing Script', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.akad-tanggal,
+.akad-tempat {
+  font-weight: bold;
+}
+
+.akad-tanggal,
+.akad-waktu,
+.akad-tempat,
+.akad-alamat {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+
+/* Maps */
+.maps-section {
+  margin-bottom: 3rem;
+  margin-top: -80px;
+}
+
+.maps-title {
+  font-family: 'Dancing Script', serif;
+  font-size: 2rem;
+  color: #ede4d7;
+  margin-bottom: 1rem;
+}
+
+.maps-container img {
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Event */
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floralFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .save-the-date-title {
+    font-size: 2.2rem;
+  }
+
+  .countdown-container {
+    gap: 0.5rem;
+  }
+
+  .countdown-item {
+    min-width: 65px;
+    padding: 0.8rem;
+  }
+
+  .akad-card {
+    padding: 1.5rem;
+  }
+
+  .akad-title {
+    font-size: 2rem;
+  }
+
+  .maps-container img {
+    height: 160px;
+  }
+}
+/* Loading Animation */
+.event-container {
+  animation: pageLoad 2s ease-out;
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Countdown Animation */
+.countdown-number {
+  animation: countPulse 2s ease-in-out infinite;
+}
+
+@keyframes countPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* adab */
+
+
+/* Main Container */
+.adab-container {
+  position: relative;
+  min-height: 100vh;
+  background: #ede4d7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.floral-top-left,
+.floral-bottom-right {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none; /* agar tidak mengganggu klik */
+  max-width: 400px;
+}
+
+.floral-top-left {
+  top: 0;
+  left: 0;
+}
+
+.floral-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(212, 196, 176, 0.3);
+  z-index: 1;
+}
+
+/* Main Content */
+.main-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Adab Section */
+.adab-section {
+  animation: fadeInDown 1.5s ease-out;
+  padding-top: 35px;
+}
+
+.adab-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+  text-align: center;
+}
+
+.adab-title {
+  font-family: 'Dancing Script', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #6e5141;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.adab-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.adab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.adab-item:hover {
+  transform: translateY(-10px);
+}
+
+.adab-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #e8ddd4, #d4c4b0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+  transition: all 0.3s ease;
+}
+
+.adab-item:hover .adab-icon {
+  background: linear-gradient(135deg, #6e5141);
+  color: white;
+  transform: scale(1.1);
+}
+
+.adab-icon svg {
+  width: 25px;
+  height: 25px;
+  color: #6e5141;
+  transition: color 0.3s ease;
+}
+
+.adab-item:hover .adab-icon svg {
+  color: white;
+}
+
+.adab-text {
+  color: #6e5141;
+}
+
+.adab-main {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.adab-sub {
+  font-size: 0.70rem;
+  line-height: 1.2;
+}
+
+/* Invitation Section */
+.invitation-section {
+  animation: fadeInUp 1.5s ease-out 0.3s both;
+}
+
+.invitation-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+}
+
+.invitation-title {
+  font-family: 'Dancing Script', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #6e5141;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.invitation-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.family-section {
+  color: #6e5141;
+}
+
+.family-header {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  border-bottom: 2px solid #6e5141;
+  padding-bottom: 0.5rem;
+}
+
+.family-left .family-header {
+  text-align: left;
+}
+
+.family-right .family-header {
+  text-align: right;
+}
+
+.family-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.family-left .family-list {
+  text-align: left;
+}
+
+.family-right .family-list {
+  text-align: right;
+}
+
+.family-list p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  transition: opacity 0.3s ease;
+}
+
+.family-list p:hover {
+  opacity: 1;
+  font-weight: 500;
+}
+
+/* Floral Center */
+.floral-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.floral-decoration {
+  width: 75px;
+  height: 75px;
+}
+
+.floral-decoration img {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floralRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .adab-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .adab-card,
+  .invitation-card {
+    padding: 2rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparan */
+    backdrop-filter: blur(2px); /* Efek buram belakang (jika mau) */
+  }
+
+  .adab-title {
+    font-size: 2rem;
+  }
+
+  .adab-items {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .adab-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .adab-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .invitation-title {
+    font-size: 1.8rem;
+  }
+
+  .invitation-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .family-left .family-header,
+  .family-right .family-header,
+  .family-left .family-list,
+  .family-right .family-list {
+    text-align: center;
+  }
+
+  .floral-center {
+    order: 2;
+  }
+
+  .family-right {
+    order: 3;
+  }
+
+  .navigation-buttons {
+    flex-direction: column;
+  }
+
+  .nav-btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .adab-title {
+    font-size: 1.8rem;
+  }
+
+  .adab-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .adab-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .adab-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .adab-main {
+    font-size: 0.9rem;
+  }
+
+  .adab-sub {
+    font-size: 0.8rem;
+  }
+
+  .invitation-title {
+    font-size: 1.6rem;
+  }
+
+  .family-header {
+    font-size: 1rem;
+  }
+
+  .family-list p {
+    font-size: 0.9rem;
+  }
+
+  .floral-decoration {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Loading Animation */
+.adab-container {
+  animation: pageLoad 2s ease-out;
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hover Effects for Cards */
+.adab-card,
+.invitation-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.adab-card:hover,
+.invitation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(139, 69, 19, 0.25);
+}
+
+
+/* Rsup */
+
+.countainerfooter {
+  background: linear-gradient(to bottom, #6e5141, #ede4d7);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #6e5141;
+  flex-direction: column;
+}
+
+.main-container1 {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.card1 {
+  background-color: #fcebe1;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.card1 h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  color: #6e5141;
+  margin-bottom: 1.5rem;
+}
+
+input[type='text'],
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: none;
+  background-color: #f0dfcb;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  color: #6e5141;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+  border-radius: 15px;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  font-size: 14px;
+  color: #6e5141;
+}
+
+button {
+  background-color: #6e5141;
+  color: white;
+  border: none;
+  padding: 0.6rem 2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #6e5141;
+}
+
+.note {
+  font-size: 15px;
+  color: #6e5141;
+  margin-bottom: 0.8rem;
+  padding-top: 50px;
+}
+
+.couple-names1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  color: #6e5141;
+  margin-bottom: 1rem;
+}
+
+
+/* Wishes Display Section */
+.wishes-display {
+  background-color: #fcebe1;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.wishes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.wishes-display h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  color: #6e5141;
+  margin: 0;
+}
+
+.wishes-stats {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.wishes-stats span {
+  background-color: #6e5141;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.connection-status.online {
+  background-color: #28a745 !important;
+}
+
+.connection-status.offline {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+}
+
+.no-wishes {
+  text-align: center;
+  color: #8b6f47;
+  font-style: italic;
+  padding: 2rem;
+  background-color: #f0dfcb;
+  border-radius: 8px;
+  border: 2px dashed #d4c4b0;
+}
+
+.no-wishes p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.wishes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wish-item {
+  background-color: #f0dfcb;
+  padding: 1rem;
+  border-radius: 12px;
+  border-left: 4px solid #6e5141;
+  transition: transform 0.2s ease;
+}
+
+.wish-item:hover {
+  transform: translateX(5px);
+}
+
+.wish-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.wish-name {
+  font-weight: bold;
+  color: #6e5141;
+  margin: 0;
+  font-size: 16px;
+}
+
+.wish-attendance {
+  font-size: 12px;
+  padding: 0.2rem 0.8rem;
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+.wish-attendance.attending {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.wish-attendance.not-attending {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.wish-message {
+  color: #6e5141;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+  font-size: 14px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.wish-timestamp {
+  color: #8b6f47;
+  font-size: 11px;
+  font-style: italic;
+}
+
+/* Success Message */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #c3e6cb;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Wishes */
+.loading-wishes {
+  text-align: center;
+  color: #8b6f47;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #f0dfcb;
+  border-top: 3px solid #6e5141;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-wishes p {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Responsive untuk wishes display */
+@media (max-width: 768px) {
+  .wishes-display {
+    padding: 1.5rem;
+    max-height: 400px;
+  }
+  
+  .wishes-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .wishes-stats {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .wish-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .wish-attendance {
+    align-self: flex-end;
+  }
+}
+
+.footer {
+  background-color: #6e5141;
+  color: white;
+  padding: 1rem;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+/* disqus */
+.disqus{
+  padding-top: 50px;
+}
+
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

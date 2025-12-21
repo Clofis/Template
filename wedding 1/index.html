@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Munah-Munah-wedding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      height: 100%;
+      font-family: 'Work Sans';
+      background: url('/asset/img/download\ \(10\).jpeg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.4); /* full overlay */
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .content {
+      text-align: center;
+      color: white;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .logo {
+      width: 350px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', serif;
+      font-size: 40px;
+      margin-bottom: 20px;
+      margin-top: -50px;
+    }
+
+    .subtext {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #6E5141;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button a {
+      text-decoration: none;
+      color: #fcebe1;
+    }
+
+    button:hover {
+      background-color: #9B5959;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+
+      button {
+        width: 50%;
+        font-size: 15px;
+      }
+    }
+
+    /* ========================================
+   ADDITIONAL RESPONSIVE MEDIA QUERIES
+   Menambahkan responsivitas untuk semua perangkat
+   ======================================== */
+
+/* Extra Small Devices (Phones, 320px and down) */
+@media (max-width: 320px) {
+  .overlay {
+    padding: 10px;
+  }
+  
+  .content {
+    max-width: 280px;
+  }
+  
+  .logo {
+    width: 250px;
+    margin-bottom: 15px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    margin-top: -40px;
+  }
+  
+  .subtext {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  
+  h2 {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    width: 80%;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Small Devices (Phones, 321px to 576px) */
+@media (min-width: 321px) and (max-width: 576px) {
+  .overlay {
+    padding: 15px;
+  }
+  
+  .content {
+    max-width: 350px;
+  }
+  
+  .logo {
+    width: 300px;
+    margin-bottom: 18px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-bottom: 18px;
+    margin-top: -45px;
+  }
+  
+  .subtext {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  
+  h2 {
+    font-size: 17px;
+    margin-bottom: 18px;
+  }
+  
+  button {
+    width: 60%;
+    padding: 11px 22px;
+    font-size: 15px;
+  }
+}
+
+/* Medium Devices (Tablets, 577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .overlay {
+    padding: 25px;
+  }
+  
+  .content {
+    max-width: 450px;
+  }
+  
+  .logo {
+    width: 380px;
+    margin-bottom: 25px;
+  }
+  
+  h1 {
+    font-size: 45px;
+    margin-bottom: 25px;
+    margin-top: -55px;
+  }
+  
+  .subtext {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  
+  button {
+    width: auto;
+    padding: 14px 28px;
+    font-size: 17px;
+  }
+}
+
+/* Large Devices (Tablets Landscape, 769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .overlay {
+    padding: 30px;
+  }
+  
+  .content {
+    max-width: 500px;
+  }
+  
+  .logo {
+    width: 420px;
+    margin-bottom: 30px;
+  }
+  
+  h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    margin-top: -60px;
+  }
+  
+  .subtext {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  
+  button {
+    padding: 15px 30px;
+    font-size: 18px;
+  }
+}
+
+/* Extra Large Devices (Desktops, 993px to 1200px) */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .overlay {
+    padding: 40px;
+  }
+  
+  .content {
+    max-width: 550px;
+  }
+  
+  .logo {
+    width: 450px;
+    margin-bottom: 35px;
+  }
+  
+  h1 {
+    font-size: 55px;
+    margin-bottom: 35px;
+    margin-top: -65px;
+  }
+  
+  .subtext {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 35px;
+  }
+  
+  button {
+    padding: 16px 32px;
+    font-size: 19px;
+  }
+}
+
+/* Landscape Orientation Adjustments */
+@media (orientation: landscape) and (max-height: 600px) {
+  .overlay {
+    padding: 15px;
+  }
+  
+  .content {
+    max-width: 500px;
+  }
+  
+  .logo {
+    width: 280px;
+    margin-bottom: 15px;
+  }
+  
+  h1 {
+    font-size: 35px;
+    margin-bottom: 15px;
+    margin-top: -35px;
+  }
+  
+  .subtext {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  
+  h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  button {
+    box-shadow: 0 4px 12px rgba(110, 81, 65, 0.3);
+  }
+  
+  button:hover {
+    box-shadow: 0 6px 16px rgba(155, 89, 89, 0.4);
+  }
+}
+
+/* Print Styles */
+@media print {
+  body,
+  html {
+    background: white !important;
+  }
+  
+  .overlay {
+    background-color: transparent !important;
+    color: black !important;
+  }
+  
+  .content {
+    color: black !important;
+  }
+  
+  h1, h2, .subtext {
+    color: black !important;
+  }
+  
+  button {
+    display: none;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  button {
+    background-color: #8B6F47;
+  }
+  
+  button:hover {
+    background-color: #A67C52;
+  }
+}
+
+
+  </style>
+  <body>
+    <div class="overlay">
+      <div class="content">
+        <img src="/asset/img/logo.png" alt="Logo MM" class="logo" />
+        <h1>Munah & Mail</h1>
+        <p class="subtext">Kepada Yth Bapak/Ibu/Saudara/i</p>
+        <h2 class="guest-name">Hafidz Fauzi</h2>
+        <button class="open-invitation-btn"><a href="main.html">Buka Undangan</a></button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
