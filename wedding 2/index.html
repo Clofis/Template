@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Pernikahan</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Font (opsional, mendekati desain elegan) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+ <style>
+  /* ===== Initial State ===== */
+  .enter-top {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  .enter-bottom {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  .enter-center {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+
+  /* ===== Active State ===== */
+  .enter-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: all 900ms ease;
+  }
+</style>
+
+
+</head>
+<body class="relative overflow-hidden">
+
+  <!-- Background Texture -->
+  <div class="absolute inset-0 -z-10">
+    <img 
+      src="assets/Backgroun.png" 
+      alt="Background" 
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Ornamen Atas -->
+  <img 
+  src="assets/bunga-atas.png" 
+  alt="Bunga Atas"
+  class="absolute top-0 left-0 w-full pointer-events-none animate-top"
+/>
+
+  <!-- Ornamen Bawah -->
+  <img 
+  src="assets/bunga-bawah.png" 
+  alt="Bunga Bawah"
+  class="absolute bottom-0 left-0 w-full pointer-events-none animate-bottom"
+/>
+
+
+  <!-- Main Content -->
+  <main class="min-h-screen flex justify-center relative z-10" style="align-items: flex-start; padding-top: 23vh;">
+    <section class="text-center px-6 animate-center ">
+
+      <!-- Logo -->
+      <div class="flex justify-center mb-6">
+        <img 
+          src="assets/logo2.png" 
+          alt="Logo"
+          class="w-60"
+        />
+      </div>
+
+      <!-- Garis Ornamen -->
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <span class="block w-16 h-px bg-gray-400"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-400"></span>
+        <span class="block w-16 h-px bg-gray-400"></span>
+      </div>
+
+      <!-- Teks Kepada -->
+      <p class="text-gray-700 mb-2">
+        Kepada Yth: Bpk/Ibu/Saudara/i
+      </p>
+
+      <!-- Nama Tamu -->
+      <h1 id="guestName" class="font-serif text-2xl font-semibold text-[#7a4f2a] mb-8">
+        Tamu Undangan
+      </h1>
+
+      <!-- Button -->
+      <button 
+        id="openInvitation"
+        onclick="enableMusicAutoplay()"
+        class="inline-flex items-center gap-3 bg-[#c49a6c] text-white px-6 py-3 rounded-full shadow-md hover:bg-[#b58a5c] transition"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 8l9 6 9-6M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z" />
+        </svg>
+        <a href="main.html">Buka Undangan</a>
+      </button>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Function to get URL parameters
+    function getURLParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Function to set guest name from URL parameter
+    function setGuestName() {
+      const guestNameElement = document.querySelector('#guestName');
+      const namaParam = getURLParameter('nama');
+      
+      if (namaParam && guestNameElement) {
+        // Decode URL and clean the name
+        const decodedName = decodeURIComponent(namaParam);
+        const cleanName = decodedName.replace(/[<>]/g, ''); // Basic XSS protection
+        
+        if (cleanName.trim() !== '') {
+          guestNameElement.textContent = cleanName;
+          console.log('Guest name set to:', cleanName);
+        }
+      }
+    }
+
+    // Function to enable music autoplay when button is clicked
+    function enableMusicAutoplay() {
+      // Set flag in localStorage to enable music autoplay in main.html
+      localStorage.setItem('musicAutoplay', 'true');
+      
+      // Also pass the guest name to main.html
+      const guestName = document.querySelector('#guestName').textContent;
+      if (guestName && guestName !== 'Tamu Undangan') {
+        localStorage.setItem('guestName', guestName);
+      }
+      
+      console.log('Music autoplay enabled for main page');
+    }
+
+    // Set guest name when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      setGuestName();
+    });
+  </script>
+</body>
+</html>
