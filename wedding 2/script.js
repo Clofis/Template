@@ -287,61 +287,36 @@ document.addEventListener('DOMContentLoaded', () => {
   window.pauseMusic = pauseMusic;
   window.toggleMusic = toggleMusic;
 
-  // ================= GUEST NAME DISPLAY ================= 
-  function displayGuestName() {
-    const welcomeMessage = document.getElementById('welcomeMessage');
-    const guestNameDisplay = document.getElementById('guestNameDisplay');
-    
-    // Try to get guest name from URL parameter first
-    const urlParams = new URLSearchParams(window.location.search);
-    let guestName = urlParams.get('nama');
-    
-    // If not in URL, try localStorage
-    if (!guestName) {
-      guestName = localStorage.getItem('guestName');
-    }
-    
-    if (guestName && guestName.trim() !== '' && guestName !== 'Tamu Undangan') {
-      const decodedName = decodeURIComponent(guestName);
-      const cleanName = decodedName.replace(/[<>]/g, ''); // Basic XSS protection
-      
-      if (guestNameDisplay && welcomeMessage) {
-        guestNameDisplay.textContent = cleanName;
-        welcomeMessage.style.display = 'block';
-        console.log('Guest name displayed:', cleanName);
-      }
-    }
-  }
-
-  // Display guest name when page loads
-  setTimeout(() => {
-    displayGuestName();
-    prefillRSVPName();
-  }, 500);
-
-  // ================= PREFILL RSVP NAME ================= 
-  // function prefillRSVPName() {
-  //   const namaInput = document.getElementById('nama');
-    
-  //   if (namaInput) {
-  //     // Try to get guest name from URL parameter first
-  //     const urlParams = new URLSearchParams(window.location.search);
-  //     let guestName = urlParams.get('nama');
-      
-  //     // If not in URL, try localStorage
-  //     if (!guestName) {
-  //       guestName = localStorage.getItem('guestName');
-  //     }
-      
-  //     if (guestName && guestName.trim() !== '' && guestName !== 'Tamu Undangan') {
-  //       const decodedName = decodeURIComponent(guestName);
-  //       const cleanName = decodedName.replace(/[<>]/g, ''); // Basic XSS protection
-        
-  //       namaInput.value = cleanName;
-  //       console.log('RSVP name prefilled:', cleanName);
+  // ================= GUEST NAME DISPLAY (DISABLED) ================= 
+  // function displayGuestName() {
+  //   const welcomeMessage = document.getElementById('welcomeMessage');
+  //   const guestNameDisplay = document.getElementById('guestNameDisplay');
+  //   
+  //   // Try to get guest name from URL parameter first
+  //   const urlParams = new URLSearchParams(window.location.search);
+  //   let guestName = urlParams.get('nama');
+  //   
+  //   // If not in URL, try localStorage
+  //   if (!guestName) {
+  //     guestName = localStorage.getItem('guestName');
+  //   }
+  //   
+  //   if (guestName && guestName.trim() !== '' && guestName !== 'Tamu Undangan') {
+  //     const decodedName = decodeURIComponent(guestName);
+  //     const cleanName = decodedName.replace(/[<>]/g, ''); // Basic XSS protection
+  //     
+  //     if (guestNameDisplay && welcomeMessage) {
+  //       guestNameDisplay.textContent = cleanName;
+  //       welcomeMessage.style.display = 'block';
+  //       console.log('Guest name displayed:', cleanName);
   //     }
   //   }
   // }
+
+  // Display guest name when page loads
+  // setTimeout(() => {
+  //   displayGuestName();
+  // }, 500);
 
   // ================= RSVP FORM WITH FIREBASE REALTIME DATABASE ================= 
   const rsvpForm = document.getElementById('rsvpForm');
@@ -442,6 +417,5 @@ function copyToClipboard(text, button) {
     alert('Gagal menyalin nomor rekening');
   });
 }
-
 
 
