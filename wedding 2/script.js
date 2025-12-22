@@ -320,28 +320,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 500);
 
   // ================= PREFILL RSVP NAME ================= 
-  function prefillRSVPName() {
-    const namaInput = document.getElementById('nama');
+  // function prefillRSVPName() {
+  //   const namaInput = document.getElementById('nama');
     
-    if (namaInput) {
-      // Try to get guest name from URL parameter first
-      const urlParams = new URLSearchParams(window.location.search);
-      let guestName = urlParams.get('nama');
+  //   if (namaInput) {
+  //     // Try to get guest name from URL parameter first
+  //     const urlParams = new URLSearchParams(window.location.search);
+  //     let guestName = urlParams.get('nama');
       
-      // If not in URL, try localStorage
-      if (!guestName) {
-        guestName = localStorage.getItem('guestName');
-      }
+  //     // If not in URL, try localStorage
+  //     if (!guestName) {
+  //       guestName = localStorage.getItem('guestName');
+  //     }
       
-      if (guestName && guestName.trim() !== '' && guestName !== 'Tamu Undangan') {
-        const decodedName = decodeURIComponent(guestName);
-        const cleanName = decodedName.replace(/[<>]/g, ''); // Basic XSS protection
+  //     if (guestName && guestName.trim() !== '' && guestName !== 'Tamu Undangan') {
+  //       const decodedName = decodeURIComponent(guestName);
+  //       const cleanName = decodedName.replace(/[<>]/g, ''); // Basic XSS protection
         
-        namaInput.value = cleanName;
-        console.log('RSVP name prefilled:', cleanName);
-      }
-    }
-  }
+  //       namaInput.value = cleanName;
+  //       console.log('RSVP name prefilled:', cleanName);
+  //     }
+  //   }
+  // }
 
   // ================= RSVP FORM WITH FIREBASE REALTIME DATABASE ================= 
   const rsvpForm = document.getElementById('rsvpForm');
@@ -442,5 +442,6 @@ function copyToClipboard(text, button) {
     alert('Gagal menyalin nomor rekening');
   });
 }
+
 
 
